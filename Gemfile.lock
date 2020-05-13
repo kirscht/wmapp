@@ -25,8 +25,8 @@ GEM
       rack-test (~> 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionpack-page_caching (1.1.0)
-      actionpack (>= 4.0.0, < 6)
+    actionpack-page_caching (1.2.1)
+      actionpack (>= 5.0.0)
     actionview (5.1.1)
       activesupport (= 5.1.1)
       builder (~> 3.1)
@@ -59,8 +59,6 @@ GEM
       activerecord (>= 3.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    airbrussh (1.2.0)
-      sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -75,21 +73,7 @@ GEM
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     bindex (0.5.0)
-    builder (3.2.3)
-    capistrano (3.8.1)
-      airbrussh (>= 1.0.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-bundler (1.2.0)
-      capistrano (~> 3.1)
-      sshkit (~> 1.2)
-    capistrano-rails (1.3.0)
-      capistrano (~> 3.1)
-      capistrano-bundler (~> 1.1)
-    capistrano-rbenv (2.1.1)
-      capistrano (~> 3.1)
-      sshkit (~> 1.3)
+    builder (3.2.4)
     capybara (2.14.2)
       addressable
       mime-types (>= 1.16)
@@ -107,10 +91,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.6)
     contracts (0.9)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    crass (1.0.6)
     daemon-spawn (0.4.2)
     database_cleaner (1.6.1)
     diff-lcs (1.3)
@@ -137,7 +122,7 @@ GEM
       execjs
     eco-source (1.1.0.rc.1)
     ejs (1.1.1)
-    erubi (1.6.0)
+    erubi (1.9.0)
     excon (0.56.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -301,7 +286,8 @@ GEM
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.8.4)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jquery-rails (4.3.1)
@@ -312,7 +298,8 @@ GEM
     json_spec (1.1.5)
       multi_json (~> 1.0)
       rspec (>= 2.0, < 4.0)
-    loofah (2.0.3)
+    loofah (2.5.0)
+      crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
@@ -322,13 +309,10 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.6.1)
     mini_portile2 (2.3.0)
-    minitest (5.10.2)
+    minitest (5.14.0)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
-    net-ssh (4.1.0)
     newrelic_rpm (4.2.0.334)
     nio4r (2.1.0)
     nokogiri (1.8.1)
@@ -336,6 +320,7 @@ GEM
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
     options (2.3.2)
+    pg (0.20.0)
     pmap (1.1.1)
     progress_bar (1.1.0)
       highline (~> 1.6)
@@ -346,7 +331,7 @@ GEM
       slop (~> 3.4)
     public_suffix (2.0.5)
     puma (3.9.1)
-    rack (2.0.3)
+    rack (2.2.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.1.1)
@@ -368,8 +353,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.3)
-      loofah (~> 2.0)
+    rails-html-sanitizer (1.3.0)
+      loofah (~> 2.3)
     railties (5.1.1)
       actionpack (= 5.1.1)
       activesupport (= 5.1.1)
@@ -458,15 +443,11 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
-    sshkit (1.13.1)
-      net-scp (>= 1.1.2)
-      net-ssh (>= 2.8.0)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
     trollop (2.1.2)
-    tzinfo (1.2.3)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -500,10 +481,6 @@ DEPENDENCIES
   b3s_emoticons!
   backbone-on-rails
   bcrypt-ruby
-  capistrano (~> 3.8.0)
-  capistrano-bundler
-  capistrano-rails
-  capistrano-rbenv
   capybara
   codeclimate-test-reporter
   coffee-rails
@@ -527,6 +504,7 @@ DEPENDENCIES
   newrelic_rpm
   nokogiri
   non-stupid-digest-assets
+  pg (= 0.20)
   progress_bar
   pry
   puma
@@ -545,7 +523,6 @@ DEPENDENCIES
   sentry-raven
   shoulda-matchers
   sprockets-es6
-  sqlite3
   uglifier
   web-console
   webmock
