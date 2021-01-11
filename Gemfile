@@ -47,7 +47,7 @@ gem "newrelic_rpm", group: "newrelic"
 
 gem "fastimage"
 gem "ruby-filemagic", require: "filemagic"
-gem "redcarpet", "~> 3.0"
+gem "redcarpet", "~> 3.5"
 gem "rouge"
 gem "font-awesome-rails", "~> 4.7"
 
